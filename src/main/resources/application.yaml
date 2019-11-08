@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: http://www.mocky.io
+        predicates:
+        - Path=/v2/5d82826a3400006900f49ff7
+        filters:
+        - AuthorizationFilter        
+      httpclient:
+        response-timeout: 3s
